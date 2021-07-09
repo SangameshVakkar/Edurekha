@@ -1,2 +1,3 @@
 # Edurekha
-Edurekha tutorial
+Edurekha tutorial 
+This is for tutorial purpose..
