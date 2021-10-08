@@ -1,0 +1,50 @@
+---------------------Ansible ------------------
+ 
+*Launch 2 unbuntu instance
+*server instanace
+	* sudo passwd root
+	* su root
+	* update 
+	* sudo apt-get install software-properties-common
+	* sudo apt-add-repository ppa:ansible/ansible
+	* update
+	* apt install ansible
+	* ssh-keygen
+	* cd /root/.ssh/ --> id_rsa.pub
+	* cat id_rsa.pub
+
+
+*Host instance
+	* enter root
+	* update
+	* ssh-keygen
+	* nano authorized_keys
+
+
+
+
+nano /etc/ansible/hosts  //creating ip addresses in file 
+	---> [testServer]
+	     ip addresses
+
+//testing connection both server
+ * ssh 'ip address of host' //server ip changes to hosts ip
+
+ * logout 
+
+ * ansible -m ping TestServer
+
+
+-----------------------------Creating Playbook-----------------------------------------
+
+* vim Sample.yml
+-->	- hosts: TestServer
+	  task:
+	 	-name: run touch command
+		 command: touch /home/aaa.txt /home/bbb.txt
+	<------
+
+
+ansible-playbook Sample.yml
+
+______________________________________________________________ Shift to host the file will be created in /home/
