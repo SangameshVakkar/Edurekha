@@ -1,0 +1,10 @@
+
+sudo apt install unzip
+export VER="0.12.9"
+sudo wget https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip
+sudo mv terraform /usr/local/bin/
+sudo mv terraform /usr/local/bin/
+mkdir projects
+cd projects
+terraform plan
+terraform apply
